@@ -2,14 +2,18 @@ import java.util.ArrayList;
 
 public class C206_CaseStudy {
 	
-		  private static final int QUITPROCEDURE = 4;
+		  private static final int quit_MainProgram = 5;
+		private static final int customer = 4;
+		private static final int product = 3;
+		private static final int Procedure = 1;
+		private static final int QUITPROCEDURE = 4;
 		  private static final int DELETEPROCEDURE = 3;
 		  private static final int VIEWPROCEDURE = 2;
 		  private static final int ADDPROCEDURE = 1;
 		  private static final int OPTION_ARCHIVE = 3;
 		  private static final int OPTION_ADD = 1;
 		  private static final int OPTION_VIEW = 2;
-		  private static final int OPTION_ADD_VIEW_ARCHIVE = 1;
+		  private static final int OPTION_ADD_VIEW_ARCHIVE = 2;
 		  private static final int _5 = 5;
 		  private static final int OPTION_QUIT = _5;
 		  private static final int QUIT = 4;
@@ -33,7 +37,7 @@ public class C206_CaseStudy {
 		    while (option != 5) {
 		    	C206_CaseStudy.menu();
 		    	option = Helper.readInt("Enter option> ");
-		    	if (option == 1) {
+		    	if (option == Procedure) { //Elizabeth
 		    		option=0; 
 		    		while (option != 5) { 
 		    			C206_CaseStudy.procedureMenu(); 
@@ -49,14 +53,14 @@ public class C206_CaseStudy {
 		    				delProcedure(procedureList);
 		    			}
 		    			else if (option == QUITPROCEDURE) {
-		    				System.out.println("Sayonara");
+		    				System.out.println("Bye");
 		    			}
 		    			else {
 		    				System.out.println("Invalid Option.");
 		    			}
 		    		}
 		    	}
-		    	else if (option == OPTION_ADD_VIEW_ARCHIVE) {
+		    	else if (option == OPTION_ADD_VIEW_ARCHIVE) { //ZunHui
 		             System.out.println("1. Add");
 		             System.out.println("2. View All");
 		             System.out.println("3. Archive");  
@@ -71,8 +75,8 @@ public class C206_CaseStudy {
 		               System.out.println("Invalid option");
 		             }
 		    	}
-		    	else if (option == 3) {
-		    		C206_CaseStudy.productMenu();
+		    	else if (option == product) { //LanXin
+		    		C206_CaseStudy.productMenu(); 
 		    		   option = Helper.readInt("Enter an option > ");
 
 		    		   if (option == 1) {
@@ -82,8 +86,7 @@ public class C206_CaseStudy {
 
 		    		    // Add product
 
-		    		    C206_CaseStudy.addProduct(productList);
-
+		    		    C206_CaseStudy.addProduct(productList); 
 		    		   } else if (option == 3) {
 
 		    		    // delete product
@@ -95,7 +98,7 @@ public class C206_CaseStudy {
 		    		    System.out.println("Invalid option");
 		    		   }
 		    		  }
-		    	else if (option == 4) { 
+		    	else if (option == customer) { //MinShuang
 		    		C206_CaseStudy.menu();
 		    	      option = Helper.readInt("Enter an option > ");
 
@@ -126,6 +129,12 @@ public class C206_CaseStudy {
 		    	        System.out.println("Invalid option");
 		    	      }
 		    	    }
+		    	else if (option == quit_MainProgram) {
+		    		System.out.println("Bye");
+		    	}
+		    	else {
+		    		System.out.println("Invalid Option");
+		    	}
 		    	  }
 
 		    	 
@@ -135,7 +144,7 @@ public class C206_CaseStudy {
 		
 		
 	  }
-		//Procedure
+		//Procedure -done by Elizabeth
 		public static void addProcedure(ArrayList<procedure> procedureList) {
 			int AdminID = Helper.readInt("Enter Administrator ID >");
 			int ProcID = Helper.readInt("Enter Procedure ID >");
@@ -167,7 +176,7 @@ public class C206_CaseStudy {
 		    output += retrieveProcedureList(procedureList);
 		    System.out.println(output);
 		  }
-		  //Transaction
+		  //Transaction - done by ZunHui
 		//=================Add====================================
 		    public static void addTransaction(ArrayList<Transaction> TransactionList) {
 		        int transcationID= Helper.readInt("Transaction ID:");
@@ -224,7 +233,7 @@ public class C206_CaseStudy {
 		      // TODO Auto-generated method stub
 		      return null;
 		    }
-		  //Product
+		  //Product - done by LanXin
 		 // Write the code for the viewAllProduct method.
 		    // Note: This method is a public static method that takes in an ArrayList of
 		    // Product objects.
@@ -299,7 +308,7 @@ public class C206_CaseStudy {
 		      }
 		     }
 		    }
-		    //Customer
+		    //Customer - done by MinShuang
 		 // ================================= Option 1 Add =================================
 		    private static Customer inputCustomer() {
 		      int customerID = Helper.readInt("Enter customer ID > ");
@@ -365,12 +374,11 @@ public class C206_CaseStudy {
 		  
 		  public static void menu() {
 			    C206_CaseStudy.setHeader("Select option");
-			    System.out.println("1. Transaction");
-			    System.out.println("2. Procedure");
+			    System.out.println("1. Procedure");
+			    System.out.println("2. Transaction");
 			    System.out.println("3. Product");
-			    System.out.println("4. Outlet");
-			    System.out.println("5. Customer");
-			    System.out.println("6. Exit");
+			    System.out.println("4. Customer");
+			    System.out.println("5. Exit");
 			    Helper.line(80, "-");
 			  }
 		  
