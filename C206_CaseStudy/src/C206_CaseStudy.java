@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import com.sun.glass.ui.Pixels.Format;
 
 public class C206_CaseStudy {
-	private static String out;
+	
 	
 		  //Done by Lanxin 
 		private static final int PRODUCT_QUIT = 7;
@@ -123,7 +123,7 @@ public class C206_CaseStudy {
 		    				if (option == DISPLAY_PRODUCT) {
 		    				// View all product
 		    					C206_CaseStudy.viewAllProduct(productList);
-		    					System.out.println(out); 
+		    					
 		    				} 
 		    				else if (option == ADD_PRODUCT) {
 
@@ -440,15 +440,17 @@ public class C206_CaseStudy {
 		 // Write the code for the viewAllProduct method.
 		    // Note: This method is a public static method that takes in an ArrayList of
 		    // Product objects.
-		      public static String viewAllProduct(ArrayList<Product> productList) {
+		      public static void viewAllProduct(ArrayList<Product> productList) {
 		    	  Helper.line(45, "=");
 		    	  System.out.println("Product List");
 		    	  Helper.line(45, "=");
+		    	  
+		    	  String out = "";
 
 		    	  if (productList.isEmpty()) {
 		    	   System.out.println("There is no product available.");
 		    	  } else {
-		    	   out = String.format("%-10s  %-25s %-40s %-55s %-70s %-55s %-40s %-15s\n", "Product ID ",
+		    	    out += String.format("%-10s  %-25s %-40s %-55s %-70s %-55s %-40s %-15s\n", "Product ID ",
 		    	     "Product Description", "Product Category ", "Product Name", "Product Price", "Product Condition",
 		    	     "Numbers of returns", "Vendor Name");
 		    	   for (int i = 0; i < productList.size(); i++) {
@@ -458,9 +460,9 @@ public class C206_CaseStudy {
 		    	      ppp.getProductPrice(), ppp.getProductCondition(), ppp.getProductReturnNum(),
 		    	      ppp.getVendorName());
 		    	   }
-
+		    	   
 		    	  }
-		    	  return out;
+		    	  System.out.println(out);
 		    	 }
 
 		    	 // add
@@ -749,7 +751,7 @@ public class C206_CaseStudy {
 		    		  if (productList.isEmpty()) {
 		    		   System.out.println("There is no product available.");
 		    		  } else {
-		    		   out = String.format("%-10s  %-25s %-40s %-55s %-70s %-55s %-40s %-15s\n ", "Product ID ",
+		    		   String out = String.format("%-10s  %-25s %-40s %-55s %-70s %-55s %-40s %-15s\n ", "Product ID ",
 		    		     "Product Description", "Product Category ", "Product Name", "Product Price", "Product Condition",
 		    		     "Numbers of returns", "Vendor Name");
 		    		   for (int i = 0; i < productList.size(); i++) {
