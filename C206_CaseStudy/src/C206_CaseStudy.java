@@ -18,7 +18,6 @@ public class C206_CaseStudy {
 		private static final int EXITPROCEDURE = 6;
 		private static final int SEARCHPROCEDURE = 5;
 		private static final int UPDATEPROCEDURE = 4;
-		private static final int quit_MainProgram = 5;
 		private static final int customer = 4;
 		private static final int product = 3;
 		private static final int Procedure = 1;
